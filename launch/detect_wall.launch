@@ -1,0 +1,11 @@
+<launch>
+    <!-- <node pkg="tf" type="static_transform_publisher" name="map_to_wall_nav_link" output="screen" args="0 0 0 1 0 0 /map /laser 100"/> -->
+
+    <node pkg="laser_stickwall" type="laser_stickwall_node" name="laser_stickwall_node" output="screen">
+        <param name="laser_sub_path" type="str" value="/scan"/>
+        <param name="transform_coord" type="str" value="/map"/>
+        <param name="wall_pub_path" type="str" value="/wall_nav/wall_path"/>
+        <param name="image_pub_path" type="str" value="/wall_nav/image"/>
+    </node>
+
+</launch>
